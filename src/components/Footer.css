@@ -1,0 +1,44 @@
+.footer {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.footer-brand {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.footer-contact li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  color: var(--bs-body-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: translateY(-5px);
+  color: #0d6efd;
+}
+
+hr {
+  border-top: 1px solid rgba(0,0,0,0.1);
+}

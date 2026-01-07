@@ -1,0 +1,59 @@
+/* Card Styles */
+.skill-card {
+  border: none;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Light Mode */
+  color: #333;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, color 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.skill-card .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #0d6efd;
+}
+
+.skill-item {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-icon {
+  font-size: 1.3rem;
+  margin-right: 0.8rem;
+  color: #0d6efd;
+}
+
+.skill-card ul {
+  padding-left: 0;
+}
+
+/* Scroll Animation */
+.skill-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DARK MODE */
+body[data-bs-theme="dark"] .skill-card {
+  background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+  color: #f0f0f0;
+}
+
+body[data-bs-theme="dark"] .skill-card .card-title {
+  color: #ffd700; /* طلائي للعنوان في الداكن */
+}
+
+body[data-bs-theme="dark"] .skill-icon {
+  color: #ffd700; /* أيقونات ذهبية في الداكن */
+}
