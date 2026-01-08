@@ -66,11 +66,16 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="col-md-6 d-flex justify-content-center">
-            <div className="hero-illustration">
-              <span className="hero-initials"><img src="/2.jpeg" className="img-fluid" alt="" /></span>
-            </div>
-          </div>
+      <div className="col-md-6 d-flex justify-content-center">
+  <div className="hero-illustration-wrapper">
+    <div className="hero-illustration">
+      <span className="hero-initials">
+        <img src="/2.jpeg" className="img-fluid" alt="Omar" />
+      </span>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>
