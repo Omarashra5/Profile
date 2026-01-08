@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer py-5 bg-body-tertiary">
       <div className="container text-center text-md-start">
-        <div className="row align-items-center">
+        <div className="row align-items-start">
 
           {/* Brand & Description */}
           <div className="col-md-4 mb-4 mb-md-0">
@@ -13,21 +13,20 @@ export default function Footer() {
             <p className="footer-text">
               Full Stack Web Developer | React, Laravel, PHP, Bootstrap
             </p>
+            <a
+              href="/OmarAshraf_Cv.docx"
+              download
+              className="btn btn-success mt-2"
+            >
+              Download CV
+            </a>
           </div>
-            <div className="ms-3 mt-4">
-              <a
-                href="/OmarAshraf_Cv.docx"
-                download
-                className="btn btn-success"
-              >
-                Download CV
-              </a>
-            </div>
+
           {/* Contact Info */}
           <div className="col-md-4 mb-4 mb-md-0">
             <h5 className="footer-title">Contact</h5>
-            <ul className="list-unstyled footer-contact">
-              <li>
+            <ul className="list-unstyled footer-contact mt-2">
+              <li className="mb-2">
                 <FaEnvelope className="me-2" /> omarcreat33@gmail.com
               </li>
               <li>
@@ -40,10 +39,20 @@ export default function Footer() {
           <div className="col-md-4">
             <h5 className="footer-title">Social</h5>
             <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-2">
-              <a href="https://www.linkedin.com/in/omarashraf22" target="_blank" className="footer-icon linkedin">
+              <a
+                href="https://www.linkedin.com/in/omarashraf22"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-icon linkedin"
+              >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/omarashra5" target="_blank" className="footer-icon github">
+              <a
+                href="https://github.com/omarashra5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-icon github"
+              >
                 <FaGithub />
               </a>
             </div>
