@@ -57,16 +57,13 @@ export default function Hero() {
             <h4 className="text-body-secondary mt-3">
               Full Stack Web Developer
             </h4>
+            
             <p className="mt-4">
               I build modern web applications using React, Laravel, PHP, and Bootstrap.
               I create responsive, high-performance websites and web apps with clean,
               maintainable code. I enjoy problem-solving, integrating APIs and databases,
               and delivering real-world projects that make an impact.
-            </p>
-
-         
-            </div>
-             <div className="mt-4">
+                 <div className="ms-3 mt-4">
               <a
                 href="/OmarAshraf_Cv.docx"
                 download
@@ -74,6 +71,8 @@ export default function Hero() {
               >
                 Download CV
               </a>
+            </div>
+            </p>
           </div>
 
           <div className="col-md-6 d-flex justify-content-center">
