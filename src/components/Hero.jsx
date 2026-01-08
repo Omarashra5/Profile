@@ -64,7 +64,9 @@ export default function Hero() {
               and delivering real-world projects that make an impact.
             </p>
 
-            <div className="mt-4">
+         
+            </div>
+             <div className="mt-4">
               <a
                 href="/OmarAshraf_Cv.docx"
                 download
@@ -72,7 +74,6 @@ export default function Hero() {
               >
                 Download CV
               </a>
-            </div>
           </div>
 
           <div className="col-md-6 d-flex justify-content-center">
