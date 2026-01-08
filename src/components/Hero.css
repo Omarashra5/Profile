@@ -1,6 +1,5 @@
 .hero-section {
   position: relative;
-  height: 20;
   min-height: 600px;
   background-color: var(--bs-body-bg);
   overflow: hidden;
@@ -17,13 +16,19 @@
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* فوق الـ particles */
   padding-top: 150px;
 }
 
-.hero-illustration {
+.hero-illustration-wrapper {
+  position: relative; /* wrapper مستقل عشان الـ float animation ما يأثرش على الكونتنت */
   width: 250px;
   height: 250px;
+}
+
+.hero-illustration {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: linear-gradient(135deg, #00a2ff, #6610f2, #6f42c1);
   background-size: 400% 400%;
@@ -32,13 +37,14 @@
   justify-content: center;
   animation: float 5s ease-in-out infinite;
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
 }
 
-.hero-initials {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+.hero-initials img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @keyframes float {
