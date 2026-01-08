@@ -63,15 +63,6 @@ export default function Hero() {
               I create responsive, high-performance websites and web apps with clean,
               maintainable code. I enjoy problem-solving, integrating APIs and databases,
               and delivering real-world projects that make an impact.
-                 <div className="ms-3 mt-4">
-              <a
-                href="/OmarAshraf_Cv.docx"
-                download
-                className="btn btn-success"
-              >
-                Download CV
-              </a>
-            </div>
             </p>
           </div>
 
