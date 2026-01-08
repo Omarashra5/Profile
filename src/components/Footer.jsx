@@ -14,7 +14,15 @@ export default function Footer() {
               Full Stack Web Developer | React, Laravel, PHP, Bootstrap
             </p>
           </div>
-
+            <div className="ms-3 mt-4">
+              <a
+                href="/OmarAshraf_Cv.docx"
+                download
+                className="btn btn-success"
+              >
+                Download CV
+              </a>
+            </div>
           {/* Contact Info */}
           <div className="col-md-4 mb-4 mb-md-0">
             <h5 className="footer-title">Contact</h5>
