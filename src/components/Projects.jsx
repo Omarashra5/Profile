@@ -25,7 +25,7 @@ export default function Projects() {
         <div className="row g-4">
 
           {/* Project with link */}
-          <div className="col-md-4">
+          <div className="col-md-6">
             <div className="card project-card shadow-sm">
               <img src="/Screenshot 2026-01-03 051439.png" className="card-img-top" />
               <div className="card-body">
@@ -39,7 +39,7 @@ export default function Projects() {
           </div>
 
           {/* Project without link (gallery) */}
-          <div className="col-md-4">
+          <div className="col-md-6">
             <div className="card project-card shadow-sm">
               <img src="/Screenshot 2026-01-07 075036.png" className="card-img-top" />
               <div className="card-body">
@@ -51,9 +51,42 @@ export default function Projects() {
               </div>
             </div>
           </div>
-
+          <div className="col-md-6">
+            <div className="card project-card shadow-sm">
+              <img src="/ShopProducts.png" className="card-img-top" alt="Shop Products Project" />
+              <div className="card-body">
+                <h5 className="card-title">Shop Products</h5>
+                <p className="card-text">CSS, Bootstrap & JavaScript</p>
+                <a
+                  href="https://fresh-market-psmyxihe2-omarashra5s-projects.vercel.app/"
+                  className="btn btn-primary w-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Website
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card project-card shadow-sm">
+              <img src="/TechStore.png" className="card-img-top" alt="Tech Store Project" />
+              <div className="card-body">
+                <h5 className="card-title">Tech Store</h5>
+                <p className="card-text">CSS, Bootstrap & JavaScript</p>
+                <a
+                  href="https://tech-store-3t1xy2ilj-omarashra5s-projects.vercel.app/"
+                  className="btn btn-primary w-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Website
+                </a>
+              </div>
+            </div>
+          </div>
           {/* Project In Progress */}
-          <div className="col-md-4">
+          <div className="col-md-12">
             <div className="card project-card shadow-sm position-relative">
               <img src="/load.webp" className="card-img-top opacity-50" />
               <div className="overlay d-flex flex-column justify-content-center align-items-center">
@@ -63,7 +96,6 @@ export default function Projects() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

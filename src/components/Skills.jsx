@@ -1,6 +1,20 @@
 import "./Skills.css"
 import { useEffect } from "react"
-import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaPhp, FaLaravel, FaDatabase, FaNodeJs, FaJs, FaTasks, FaSearch, FaFileWord, FaComments } from "react-icons/fa"
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaReact,
+  FaPhp,
+  FaLaravel,
+  FaDatabase,
+  FaNodeJs,
+  FaJs,
+  FaTasks,
+  FaSearch,
+  FaFileWord,
+  FaComments,
+} from "react-icons/fa"
 
 export default function Skills() {
   useEffect(() => {
@@ -13,7 +27,7 @@ export default function Skills() {
           }
         })
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     )
 
     cards.forEach(card => observer.observe(card))
@@ -24,7 +38,7 @@ export default function Skills() {
     { icon: <FaCss3Alt />, name: "CSS3" },
     { icon: <FaBootstrap />, name: "Bootstrap" },
     { icon: <FaReact />, name: "React" },
-    { icon: <FaJs />, name: "Javascript" },
+    { icon: <FaJs />, name: "JavaScript" },
   ]
 
   const backendSkills = [
@@ -37,48 +51,49 @@ export default function Skills() {
 
   const otherSkills = [
     { icon: <FaTasks />, name: "Problem Solving" },
-    { icon: <FaSearch />, name: "Searching" },
+    { icon: <FaSearch />, name: "Research Skills" },
     { icon: <FaComments />, name: "Communication" },
     { icon: <FaFileWord />, name: "Microsoft Office" },
-    { icon: <FaTasks />, name: "Testing" },
+    { icon: <FaTasks />, name: "Testing & Debugging" },
   ]
 
-  function renderSkills(skills) {
-    return skills.map((skill, index) => (
+  const renderSkills = skills =>
+    skills.map((skill, index) => (
       <li key={index} className="skill-item">
-        <span className="skill-icon">{skill.icon}</span> {skill.name}
+        <span className="skill-icon">{skill.icon}</span>
+        {skill.name}
       </li>
     ))
-  }
 
   return (
     <section className="py-5 bg-body">
       <div className="container">
-        <h2 className="skills-title mb-5">My Skills</h2>
+        <h2 className="skills-title">My Skills</h2>
+
         <div className="row g-4">
           <div className="col-md-4">
-            <div className="card skill-card h-100 shadow-sm">
+            <div className="card skill-card h-100">
               <div className="card-body">
                 <h5 className="card-title">Frontend</h5>
-                <ul className="list-unstyled mt-3">{renderSkills(frontendSkills)}</ul>
+                <ul className="list-unstyled">{renderSkills(frontendSkills)}</ul>
               </div>
             </div>
           </div>
 
           <div className="col-md-4">
-            <div className="card skill-card h-100 shadow-sm">
+            <div className="card skill-card h-100">
               <div className="card-body">
                 <h5 className="card-title">Backend</h5>
-                <ul className="list-unstyled mt-3">{renderSkills(backendSkills)}</ul>
+                <ul className="list-unstyled">{renderSkills(backendSkills)}</ul>
               </div>
             </div>
           </div>
 
           <div className="col-md-4">
-            <div className="card skill-card h-100 shadow-sm">
+            <div className="card skill-card h-100">
               <div className="card-body">
                 <h5 className="card-title">Other Skills</h5>
-                <ul className="list-unstyled mt-3">{renderSkills(otherSkills)}</ul>
+                <ul className="list-unstyled">{renderSkills(otherSkills)}</ul>
               </div>
             </div>
           </div>

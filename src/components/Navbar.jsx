@@ -60,24 +60,14 @@ export default function Navbar() {
 
           <ul className="navbar-nav d-flex flex-row align-items-center gap-3 me-3">
             <li className="nav-item">
-              <a className="nav-link text-primary" href="mailto:omarcreat33@gmail.com" title="Email">
-                <FaEnvelope />
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link text-info" href="https://www.linkedin.com/in/omarashraf22" target="_blank" title="LinkedIn">
                 <FaLinkedin />
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark" href="https://github.com/omarashra5" target="_blank" title="GitHub">
+              <a className="nav-link" href="https://github.com/omarashra5" target="_blank" title="GitHub">
                 <FaGithub />
               </a>
-            </li>
-            <li className="nav-item">
-              <span className="nav-link text-success">
-                <FaPhone /> 01 012329975
-              </span>
             </li>
           </ul>
 

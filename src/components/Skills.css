@@ -1,59 +1,89 @@
-/* Card Styles */
+/* ================= Skills Title ================= */
+.skills-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= Skill Card ================= */
 .skill-card {
   border: none;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Light Mode */
-  color: #333;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, color 0.4s ease;
+  border-radius: 1.2rem;
+  background: #ffffff;
+  color: #212529;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.skill-card .card-title {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #0d6efd;
-}
-
-.skill-item {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.skill-icon {
-  font-size: 1.3rem;
-  margin-right: 0.8rem;
-  color: #0d6efd;
-}
-
-.skill-card ul {
-  padding-left: 0;
-}
-
-/* Scroll Animation */
 .skill-card.animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* DARK MODE */
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= Card Title ================= */
+.skill-card .card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0d6efd;
+}
+
+/* ================= Skill Item ================= */
+.skill-item {
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  color: #495057;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(6px);
+  color: #0d6efd;
+}
+
+/* ================= Skill Icon ================= */
+.skill-icon {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  color: #0d6efd;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.2);
+}
+
+/* ================= Dark Mode ================= */
 body[data-bs-theme="dark"] .skill-card {
-  background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
-  color: #f0f0f0;
+  background: #161a1d;
+  color: #f1f1f1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 body[data-bs-theme="dark"] .skill-card .card-title {
-  color: #ffd700; /* طلائي للعنوان في الداكن */
+  color: #4dabf7;
+}
+
+body[data-bs-theme="dark"] .skill-item {
+  color: #ced4da;
+}
+
+body[data-bs-theme="dark"] .skill-item:hover {
+  color: #4dabf7;
 }
 
 body[data-bs-theme="dark"] .skill-icon {
-  color: #ffd700; /* أيقونات ذهبية في الداكن */
+  color: #4dabf7;
 }
