@@ -87,7 +87,7 @@ export default function Projects() {
           </div>
             <div className="col-md-6">
             <div className="card project-card shadow-sm">
-              <img src="/Coding.png" className="card-img-top" alt="CodeMasters Project" />
+              <img src="/public/Coding.png" className="card-img-top" alt="CodeMasters Project" />
               <div className="card-body">
                 <h5 className="card-title">CodeMasters Academy</h5>
                 <p className="card-text">CSS, Bootstrap & JavaScript</p>
