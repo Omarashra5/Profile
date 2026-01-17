@@ -85,6 +85,23 @@ export default function Projects() {
               </div>
             </div>
           </div>
+            <div className="col-md-6">
+            <div className="card project-card shadow-sm">
+              <img src="/Coding.png" className="card-img-top" alt="CodeMasters Project" />
+              <div className="card-body">
+                <h5 className="card-title">CodeMasters Academy</h5>
+                <p className="card-text">CSS, Bootstrap & JavaScript</p>
+                <a
+                  href="https://code-academy-g1ykjn98d-omarashra5s-projects.vercel.app"
+                  className="btn btn-primary w-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Website
+                </a>
+              </div>
+            </div>
+          </div>
           {/* Project In Progress */}
           <div className="col-md-12">
             <div className="card project-card shadow-sm position-relative">
