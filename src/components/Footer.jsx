@@ -3,12 +3,12 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer py-5 bg-body-tertiary">
-      <div className="container text-center text-md-start">
+    <footer className="footer py-5">
+      <div className="container">
         <div className="row align-items-start">
 
           {/* Brand & Description */}
-          <div className="col-md-4 mb-4 mb-md-0">
+          <div className="col-md-4 mb-4 mb-md-0 text-center text-md-start">
             <h3 className="footer-brand fw-bold">Omar Ashraf</h3>
             <p className="footer-text">
               Full Stack Web Developer | React, Laravel, PHP, Bootstrap
@@ -16,17 +16,17 @@ export default function Footer() {
             <a
               href="/OmarAshraf_Cv.docx"
               download
-              className="btn btn-success mt-2"
+              className="btn text-light footer-btn mt-2"
             >
               Download CV
             </a>
           </div>
 
           {/* Contact Info */}
-          <div className="col-md-4 mb-4 mb-md-0">
+          <div className="col-md-4 mb-4 mb-md-0 text-center text-md-start">
             <h5 className="footer-title">Contact</h5>
-            <ul className="list-unstyled footer-contact mt-2">
-              <li className="mb-2">
+            <ul className="footer-contact list-unstyled mt-2">
+              <li>
                 <FaEnvelope className="me-2" /> omarcreat33@gmail.com
               </li>
               <li>
@@ -36,9 +36,9 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="col-md-4">
+          <div className="col-md-4 text-center text-md-start">
             <h5 className="footer-title">Social</h5>
-            <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-2">
+            <div className="footer-social d-flex gap-3 mt-2">
               <a
                 href="https://www.linkedin.com/in/omarashraf22"
                 target="_blank"

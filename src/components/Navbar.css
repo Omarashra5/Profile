@@ -1,0 +1,29 @@
+.glass-nav {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.75);
+}
+
+[data-bs-theme="dark"] .glass-nav {
+  background: rgba(0,0,0,0.75);
+}
+
+.active-link {
+  color: #0d6efd !important;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.icon-link {
+  font-size: 1.3rem;
+  color: var(--bs-body-color);
+  transition: 0.3s;
+}
+
+.icon-link:hover {
+  color: #0d6efd;
+  transform: scale(1.2);
+}
+
+.theme-btn {
+  border-radius: 50%;
+  padding: 6px 8px;
+}

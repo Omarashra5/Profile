@@ -1,13 +1,31 @@
 import { useEffect, useState } from "react"
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa"
-
+import { FaLinkedin, FaGithub, FaMoon, FaSun } from "react-icons/fa"
+import "./Navbar.css"
 export default function Navbar() {
   const [theme, setTheme] = useState("light")
+  const [active, setActive] = useState("home")
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light"
     setTheme(savedTheme)
     document.body.setAttribute("data-bs-theme", savedTheme)
+
+    const handleScroll = () => {
+      const sections = ["home", "skills", "projects", "contact"]
+      sections.forEach((sec) => {
+        const el = document.getElementById(sec)
+        if (el) {
+          const top = el.offsetTop - 100
+          const bottom = top + el.offsetHeight
+          if (window.scrollY >= top && window.scrollY < bottom) {
+            setActive(sec)
+          }
+        }
+      })
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   function toggleTheme() {
@@ -17,22 +35,20 @@ export default function Navbar() {
     localStorage.setItem("theme", newTheme)
   }
 
-  // Smooth Scroll Function
   const scrollToSection = (id) => {
     const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" })
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm py-3">
+    <nav className="navbar navbar-expand-lg fixed-top shadow-sm glass-nav">
       <div className="container">
-        <a className="navbar-brand fw-bold fs-3" href="#">Omar Ashraf</a>
+        <a className="navbar-brand fw-bold fs-4 text-primary" href="#">
+          Omar<span className="text-info"> Ashraf</span>
+        </a>
 
         <button
           className="navbar-toggler"
-          type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarContent"
         >
@@ -40,40 +56,33 @@ export default function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <button onClick={() => scrollToSection("home")} className="nav-link btn btn-link">
-                Home
-              </button>
-            </li>
-            <li className="nav-item">
-              <button onClick={() => scrollToSection("skills")} className="nav-link btn btn-link">
-                Skills
-              </button>
-            </li>
-            <li className="nav-item">
-              <button onClick={() => scrollToSection("projects")} className="nav-link btn btn-link">
-                Projects
-              </button>
-            </li>
+          <ul className="navbar-nav mx-auto gap-2">
+            {["home", "skills", "projects", "contact"].map((item) => (
+              <li className="nav-item" key={item}>
+                <button
+                  onClick={() => scrollToSection(item)}
+                  className={`nav-link btn btn-link px-3 ${
+                    active === item ? "active-link" : ""
+                  }`}
+                >
+                  {item.toUpperCase()}
+                </button>
+              </li>
+            ))}
           </ul>
 
-          <ul className="navbar-nav d-flex flex-row align-items-center gap-3 me-3">
-            <li className="nav-item">
-              <a className="nav-link text-info" href="https://www.linkedin.com/in/omarashraf22" target="_blank" title="LinkedIn">
-                <FaLinkedin />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="https://github.com/omarashra5" target="_blank" title="GitHub">
-                <FaGithub />
-              </a>
-            </li>
-          </ul>
+          <div className="d-flex align-items-center gap-3">
+            <a href="https://linkedin.com/in/omarashraf22" target="_blank" className="icon-link">
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com/omarashra5" target="_blank" className="icon-link">
+              <FaGithub />
+            </a>
 
-          <button onClick={toggleTheme} className="btn btn-outline-secondary ms-3">
-            {theme === "light" ? "🌙 Dark" : "☀️ Light"}
-          </button>
+            <button onClick={toggleTheme} className="btn btn-sm theme-btn">
+              {theme === "light" ? <FaMoon /> : <FaSun />}
+            </button>
+          </div>
         </div>
       </div>
     </nav>

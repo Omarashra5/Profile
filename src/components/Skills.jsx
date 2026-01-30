@@ -16,6 +16,39 @@ import {
   FaComments,
 } from "react-icons/fa"
 
+const skillsData = [
+  {
+    title: "Frontend",
+    skills: [
+      { icon: <FaHtml5 />, name: "HTML5" },
+      { icon: <FaCss3Alt />, name: "CSS3" },
+      { icon: <FaBootstrap />, name: "Bootstrap" },
+      { icon: <FaReact />, name: "React" },
+      { icon: <FaJs />, name: "JavaScript" },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { icon: <FaPhp />, name: "PHP (Advanced)" },
+      { icon: <FaLaravel />, name: "Laravel" },
+      { icon: <FaDatabase />, name: "Database" },
+      { icon: <FaNodeJs />, name: "Node.js" },
+      { icon: <FaJs />, name: "Express.js" },
+    ],
+  },
+  {
+    title: "Other Skills",
+    skills: [
+      { icon: <FaTasks />, name: "Problem Solving" },
+      { icon: <FaSearch />, name: "Research" },
+      { icon: <FaComments />, name: "Communication" },
+      { icon: <FaFileWord />, name: "Microsoft Office" },
+      { icon: <FaTasks />, name: "Testing & Debugging" },
+    ],
+  },
+]
+
 export default function Skills() {
   useEffect(() => {
     const cards = document.querySelectorAll(".skill-card")
@@ -27,76 +60,34 @@ export default function Skills() {
           }
         })
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     )
 
     cards.forEach(card => observer.observe(card))
   }, [])
 
-  const frontendSkills = [
-    { icon: <FaHtml5 />, name: "HTML5" },
-    { icon: <FaCss3Alt />, name: "CSS3" },
-    { icon: <FaBootstrap />, name: "Bootstrap" },
-    { icon: <FaReact />, name: "React" },
-    { icon: <FaJs />, name: "JavaScript" },
-  ]
-
-  const backendSkills = [
-    { icon: <FaPhp />, name: "PHP (Advanced)" },
-    { icon: <FaLaravel />, name: "Laravel" },
-    { icon: <FaDatabase />, name: "Database Management" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <FaJs />, name: "Express.js" },
-  ]
-
-  const otherSkills = [
-    { icon: <FaTasks />, name: "Problem Solving" },
-    { icon: <FaSearch />, name: "Research Skills" },
-    { icon: <FaComments />, name: "Communication" },
-    { icon: <FaFileWord />, name: "Microsoft Office" },
-    { icon: <FaTasks />, name: "Testing & Debugging" },
-  ]
-
-  const renderSkills = skills =>
-    skills.map((skill, index) => (
-      <li key={index} className="skill-item">
-        <span className="skill-icon">{skill.icon}</span>
-        {skill.name}
-      </li>
-    ))
-
   return (
-    <section className="py-5 bg-body">
+    <section className="skills-section py-5" id="skills">
       <div className="container">
-        <h2 className="skills-title">My Skills</h2>
+        <h2 className="skills-title text-center">My Skills</h2>
 
         <div className="row g-4">
-          <div className="col-md-4">
-            <div className="card skill-card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Frontend</h5>
-                <ul className="list-unstyled">{renderSkills(frontendSkills)}</ul>
-              </div>
-            </div>
-          </div>
+          {skillsData.map((group, i) => (
+            <div className="col-md-4" key={i}>
+              <div className="skill-card h-100">
+                <h5 className="skill-card-title">{group.title}</h5>
 
-          <div className="col-md-4">
-            <div className="card skill-card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Backend</h5>
-                <ul className="list-unstyled">{renderSkills(backendSkills)}</ul>
+                <ul className="skill-list">
+                  {group.skills.map((skill, index) => (
+                    <li key={index} className="skill-item">
+                      <span className="skill-icon">{skill.icon}</span>
+                      {skill.name}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card skill-card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Other Skills</h5>
-                <ul className="list-unstyled">{renderSkills(otherSkills)}</ul>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
