@@ -13,25 +13,25 @@ const projects = [
     title: "Syntax Academy",
     tech: "Bootstrap & JavaScript",
     img: "/Screenshot 2026-01-07 075036.png",
-    link: "https://omarashra5.github.io/Syntax_Academy/"
+    link: "https://web-code-3wip.vercel.app/"
   },
   {
     title: "Shop Products",
     tech: "CSS, Bootstrap & JavaScript",
     img: "/ShopProducts.png",
-    link: "https://fresh-market-psmyxihe2-omarashra5s-projects.vercel.app/"
+    link: "https://fresh-market-nine.vercel.app/"
   },
   {
     title: "Tech Store",
     tech: "CSS, Bootstrap & JavaScript",
     img: "/TechStore.png",
-    link: "https://tech-store-3t1xy2ilj-omarashra5s-projects.vercel.app/"
+    link: "https://tech-store-one-topaz.vercel.app/"
   },
   {
     title: "CodeMasters Academy",
     tech: "CSS, Bootstrap & JavaScript",
     img: "/Coding.png",
-    link: "https://code-academy-g1ykjn98d-omarashra5s-projects.vercel.app"
+    link: "https://code-academy-drab-five.vercel.app/"
   },
   {
     title: "GYM ELITE",
