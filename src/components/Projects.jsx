@@ -10,12 +10,6 @@ const projects = [
     link: "https://we-school-assuit.vercel.app/"
   },
   {
-    title: "Syntax Academy",
-    tech: "Bootstrap & JavaScript",
-    img: "/Screenshot 2026-01-07 075036.png",
-    link: "https://web-code-3wip.vercel.app/"
-  },
-  {
     title: "Shop Products",
     tech: "CSS, Bootstrap & JavaScript",
     img: "/ShopProducts.png",
@@ -68,13 +62,11 @@ export default function Projects() {
     <section className="projects-section py-5" id="projects">
       <div className="container">
         <h2 className="projects-title text-center">Projects</h2>
-
         <div className="row g-4">
           {projects.map((p, i) => (
             <div className="col-md-6 col-lg-4" key={i}>
               <div className="project-card">
                 <img src={p.img} alt={p.title} />
-
                 <div className="project-overlay">
                   <h5>{p.title}</h5>
                   <span>{p.tech}</span>
