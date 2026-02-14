@@ -27,3 +27,65 @@
   border-radius: 50%;
   padding: 6px 8px;
 }
+.views-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, rgba(13,110,253,0.15), rgba(0,255,200,0.12));
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 10px rgba(13,110,253,0.25),
+    inset 0 0 6px rgba(255,255,255,0.08);
+
+  animation: badgeGlow 3s ease-in-out infinite;
+}
+
+.views-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  animation: shine 4s infinite;
+}
+
+.eye {
+  font-size: 14px;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+
+.views-text {
+  color: var(--bs-secondary);
+  letter-spacing: 0.5px;
+}
+
+.views-number {
+  color: var(--bs-primary);
+  font-weight: 800;
+  font-size: 14px;
+  animation: pop 0.35s ease;
+}
+@keyframes badgeGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(13,110,253,0.25); }
+  50% { box-shadow: 0 0 16px rgba(0,255,200,0.35); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-120%); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

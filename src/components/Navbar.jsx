@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react"
 import { FaLinkedin, FaGithub, FaMoon, FaSun } from "react-icons/fa"
+import { db, ref, runTransaction , onValue  } from "../firebase"
 import "./Navbar.css"
 export default function Navbar() {
   const [theme, setTheme] = useState("light")
   const [active, setActive] = useState("home")
-
+  const [views, setViews] = useState(0)
   useEffect(() => {
+    const viewsRef = ref(db, "profileViews")
+    runTransaction(viewsRef, (current) => (current || 0) + 1)
+    const unsubscribe = onValue(viewsRef, (snapshot) => {
+      setViews(snapshot.val() || 0)
+    })
     const savedTheme = localStorage.getItem("theme") || "light"
     setTheme(savedTheme)
     document.body.setAttribute("data-bs-theme", savedTheme)
@@ -25,7 +31,10 @@ export default function Navbar() {
     }
 
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {window.removeEventListener("scroll", handleScroll)
+      unsubscribe()
+    }
+
   }, [])
 
   function toggleTheme() {
@@ -46,7 +55,6 @@ export default function Navbar() {
         <a className="navbar-brand fw-bold fs-4 text-primary" href="#">
           Omar<span className="text-info"> Ashraf</span>
         </a>
-
         <button
           className="navbar-toggler"
           data-bs-toggle="collapse"
@@ -61,9 +69,8 @@ export default function Navbar() {
               <li className="nav-item" key={item}>
                 <button
                   onClick={() => scrollToSection(item)}
-                  className={`nav-link btn btn-link px-3 ${
-                    active === item ? "active-link" : ""
-                  }`}
+                  className={`nav-link btn btn-link px-3 ${active === item ? "active-link" : ""
+                    }`}
                 >
                   {item.toUpperCase()}
                 </button>
@@ -82,6 +89,10 @@ export default function Navbar() {
             <button onClick={toggleTheme} className="btn btn-sm theme-btn">
               {theme === "light" ? <FaMoon /> : <FaSun />}
             </button>
+            <div className="views-badge ms-3">
+              <span className="eye">👁</span>
+              <span key={views} className="views-number">{views}</span>
+            </div>
           </div>
         </div>
       </div>

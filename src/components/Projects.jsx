@@ -80,16 +80,17 @@ export default function Projects() {
 
           {/* IN PROGRESS */}
           <div className="col-md-6 col-lg-4">
-            <div className="project-card in-progress">
-              <img src="/load.webp" alt="Loading" />
-              <div className="project-overlay">
-                <FaHourglassHalf size={40} />
-                <h5>In Progress</h5>
-                <span>Coming Soon...</span>
+            <div className="col-lg-12 col-md-12 mx-auto">
+              <div className="project-card in-progress">
+                <img src="/load.webp" alt="Loading" />
+                <div className="project-overlay">
+                  <FaHourglassHalf size={40} />
+                  <h5>In Progress</h5>
+                  <span>Coming Soon...</span>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
